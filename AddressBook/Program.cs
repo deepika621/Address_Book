@@ -1,5 +1,9 @@
 ﻿using System;
+using System.Collections;
 using System.Collections.Generic;
+
+namespace AddressBook
+{
 
 
 public class Contact
@@ -55,5 +59,32 @@ class Program
         addressBook.AddContact(myContact);
 
         addressBook.PrintContacts();
+        // Create a new dictionary to store contacts
+        Dictionary<string, string> contacts = new Dictionary<string, string>();
+
+        // Add some initial contacts
+        contacts.Add("John Doe", "555-1234");
+        contacts.Add("Jane Smith", "555-5678");
+
+        // Ask the user to enter a new contact name and phone number
+        Console.Write("Enter a new contact name: ");
+        string name = Console.ReadLine();
+        Console.Write("Enter a phone number: ");
+        string phone = Console.ReadLine();
+
+        // Add the new contact to the dictionary
+        contacts.Add(name, phone);
+
+        // Display the updated address book
+        Console.WriteLine("Address Book:");
+        foreach (KeyValuePair<string, string> contact in contacts)
+        {
+            Console.WriteLine("{0}: {1}", contact.Key, contact.Value);
+        }
+
+        // Wait for the user to press a key before exiting
+       // Console.WriteLine("Press any key to exit.");
+        Console.ReadKey();
     }
+}
 }
