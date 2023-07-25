@@ -1,0 +1,14 @@
+C:\Users\deepi\source\repos\AddressBook\AddressBook\bin\Debug\netcoreapp3.1\AddressBook.exe
+C:\Users\deepi\source\repos\AddressBook\AddressBook\bin\Debug\netcoreapp3.1\AddressBook.deps.json
+C:\Users\deepi\source\repos\AddressBook\AddressBook\bin\Debug\netcoreapp3.1\AddressBook.runtimeconfig.json
+C:\Users\deepi\source\repos\AddressBook\AddressBook\bin\Debug\netcoreapp3.1\AddressBook.runtimeconfig.dev.json
+C:\Users\deepi\source\repos\AddressBook\AddressBook\bin\Debug\netcoreapp3.1\AddressBook.dll
+C:\Users\deepi\source\repos\AddressBook\AddressBook\bin\Debug\netcoreapp3.1\AddressBook.pdb
+C:\Users\deepi\source\repos\AddressBook\AddressBook\obj\Debug\netcoreapp3.1\AddressBook.csproj.AssemblyReference.cache
+C:\Users\deepi\source\repos\AddressBook\AddressBook\obj\Debug\netcoreapp3.1\AddressBook.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\deepi\source\repos\AddressBook\AddressBook\obj\Debug\netcoreapp3.1\AddressBook.AssemblyInfoInputs.cache
+C:\Users\deepi\source\repos\AddressBook\AddressBook\obj\Debug\netcoreapp3.1\AddressBook.AssemblyInfo.cs
+C:\Users\deepi\source\repos\AddressBook\AddressBook\obj\Debug\netcoreapp3.1\AddressBook.csproj.CoreCompileInputs.cache
+C:\Users\deepi\source\repos\AddressBook\AddressBook\obj\Debug\netcoreapp3.1\AddressBook.dll
+C:\Users\deepi\source\repos\AddressBook\AddressBook\obj\Debug\netcoreapp3.1\AddressBook.pdb
+C:\Users\deepi\source\repos\AddressBook\AddressBook\obj\Debug\netcoreapp3.1\AddressBook.genruntimeconfig.cache
