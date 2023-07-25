@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.Xml.Linq;
 
 namespace AddressBook
 {
@@ -25,7 +26,6 @@ public class Addressbook
     {
         contacts.Add(contact);
     }
-
     public void PrintContacts()
     {
         foreach (Contact contact in contacts)
@@ -38,52 +38,51 @@ public class Addressbook
         }
     }
 }
-
-class Program
-{
-    static void Main(string[] args)
+    class Program
     {
-        Addressbook addressBook = new Addressbook();
-
-        Contact myContact = new Contact
+        static void Main(string[] args)
         {
-            FirstName = "Emily",
-            LastName = "Johnson",
-            Address = "7342 Winding way",
-            City = "Arkansas",
-            Zip = "12345",
-            PhoneNumber = "555-555-1234",
-            Email = "johnson@email.com"
-        };
+            Addressbook addressBook = new Addressbook();
 
-        addressBook.AddContact(myContact);
+            Contact myContact = new Contact
+            {
+                FirstName = "Emily",
+                LastName = "Johnson",
+                Address = "7342 Winding way",
+                City = "Arkansas",
+                Zip = "12345",
+                PhoneNumber = "555-555-1234",
+                Email = "johnson@email.com"
+            };
 
-        addressBook.PrintContacts();
+            addressBook.AddContact(myContact);
 
-        // 2.Ability to add new Contact to address book
+            addressBook.PrintContacts();
 
-        // Create a new dictionary to store contacts
-        Dictionary<string, string> contacts = new Dictionary<string, string>();
+            // 2.Ability to add new Contact to address book
 
-        // Add some initial contacts
-        contacts.Add("John Doe", "555-1234");
-        contacts.Add("Jane Smith", "555-5678");
+            // Create a new dictionary to store contacts
+            Dictionary<string, string> contacts = new Dictionary<string, string>();
 
-        // Ask the user to enter a new contact name and phone number
-        Console.Write("Enter a new contact name: ");
-        string name = Console.ReadLine();
-        Console.Write("Enter a phone number: ");
-        string phone = Console.ReadLine();
+            // Add some initial contacts
+            contacts.Add("John Doe", "555-1234");
+            contacts.Add("Jane Smith", "555-5678");
 
-        // Add the new contact to the dictionary
-        contacts.Add(name, phone);
+            // Ask the user to enter a new contact name and phone number
+            Console.Write("Enter a new contact name: ");
+            string name = Console.ReadLine();
+            Console.Write("Enter a phone number: ");
+            string phone = Console.ReadLine();
 
-        // Display the updated address book
-        Console.WriteLine("Address Book:");
-        foreach (KeyValuePair<string, string> contact in contacts)
-        {
-            Console.WriteLine("{0}: {1}", contact.Key, contact.Value);
-        }
+            // Add the new contact to the dictionary
+            contacts.Add(name, phone);
+
+            // Display the updated address book
+            Console.WriteLine("Address Book:");
+            foreach (KeyValuePair<string, string> contact in contacts)
+            {
+                Console.WriteLine("{0}: {1}", contact.Key, contact.Value);
+            }
 
             // 3.Ability to edit exixting contact person using their name
 
@@ -128,7 +127,7 @@ class Program
             // Check if the contact exists
             if (contacts.ContainsKey(name))
             {
-                
+
 
                 // delete the contact
                 contacts.Remove(name);
@@ -144,10 +143,58 @@ class Program
             {
                 Console.WriteLine("Contact not found.");
             }
+            PersonList.MultiplePersonAddress();
+
 
             // Wait for the user to press a key before exiting
             // Console.WriteLine("Press any key to exit.");
+
             Console.ReadKey();
+        }
+
     }
-}
+    class PersonList
+    {
+        public static void MultiplePersonAddress()
+        {
+            List<Person> addressBook = new List<Person>();
+            while (true)
+            {
+                Console.WriteLine("Enter a name to add to the address book or type 'exit' to quit:");
+                string name = Console.ReadLine();
+
+                if (name == "exit")
+                {
+                    break;
+                }
+
+                Console.WriteLine("Enter a phone number:");
+                string phoneNumber = Console.ReadLine();
+
+                Console.WriteLine("Enter an email address:");
+                string emailAddress = Console.ReadLine();
+
+                Person newPerson = new Person(name,phoneNumber,emailAddress);
+                addressBook.Add(newPerson);
+            }
+
+            Console.WriteLine("Address book contents:");
+            foreach (var person in addressBook)
+            {
+                Console.WriteLine(person.Name + " " + person.PhoneNumber + " " + person.EmailAddress);
+            }
+        }
+    }
+    class Person
+    {
+        public string Name { get; set; }
+        public string PhoneNumber { get; set; }
+        public string EmailAddress { get; set; }
+        public Person(string name,string phoneNumber,string emailAddress) 
+        {
+            Name = name;
+            PhoneNumber = phoneNumber;
+            EmailAddress = emailAddress;
+        }
+    }
 }
